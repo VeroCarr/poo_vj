@@ -18,8 +18,8 @@ public class PooVero {
         // TODO code application logic here
         //Tenemos que generar antes los objetos de las clases anteriores
         Usuario x=new Usuario();
-        x.altura=1.68f;
-        x.peso=71f;
+        x.setAltura(1.68f);
+        x.setPeso(80);
         Imc algo=new Imc();
         algo.u=x;
         //calculamos el imc a traves de su objeto 
