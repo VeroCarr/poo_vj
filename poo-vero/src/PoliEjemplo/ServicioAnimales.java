@@ -9,11 +9,8 @@ package PoliEjemplo;
  *
  * @author T-102
  */
-public class Gato extends Animal implements ComportamientoAnimal{
-
-    @Override
-    public void hacerRuido() {
-        System.out.println("miau-miau-miau");
+public class ServicioAnimales {
+    public void servicioHacerRuido(ComportamientoAnimal ca){
+        ca.hacerRuido();
     }
-    
 }
