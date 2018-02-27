@@ -5,6 +5,9 @@
  */
 package poo.vero;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  *
  * @author T-102
@@ -100,19 +103,26 @@ public class Ventanita extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void botonCalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonCalcularActionPerformed
-        // TODO add your handling code here:
-        //Pedir valor al exto peso
-        float peso=Float.parseFloat(textoPeso.getText());
-        float altura=Float.parseFloat(textoAltura.getText());
-        //Crear entidad 
-        Usuario u=new Usuario();
-        u.setPeso(peso);
-        u.setAltura(altura);
-        //Generar el modelo IMC
-        Imc x=new Imc();
-        x.u=u;
-        //en rl imc que se llama x invocamos el metodo calcular
-        etiquetaResultado.setText(x.calcular());
+        try {
+            // TODO add your handling code here:
+            //Pedir valor al exto peso
+            float peso=Float.parseFloat(textoPeso.getText());
+            float altura=Float.parseFloat(textoAltura.getText());
+            //Crear entidad
+            Usuario u=new Usuario();
+            //Los validamos
+            ValidarCantidades.validarValorNegativo(altura);
+            ValidarCantidades.validarValorNegativo(peso);
+            u.setPeso(peso);
+            u.setAltura(altura);
+            //Generar el modelo IMC
+            Imc x=new Imc();
+            x.u=u;
+            //en rl imc que se llama x invocamos el metodo calcular
+            etiquetaResultado.setText(x.calcular());
+        } catch (NumeroNegativoException ex) {
+               etiquetaResultado.setText(ex.getMessage());
+        }
     }//GEN-LAST:event_botonCalcularActionPerformed
 
     private void textoPesoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textoPesoActionPerformed
