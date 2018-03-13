@@ -1,29 +1,28 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package Serializacion2;
 
-/**
- *
- * @author T-102
- */
 public class Empleado {
     private String nombre;
     private String paterno;
     private String materno;
-    private Integer sueldo;
+    private Float sueldoBase;
     private String departamento;
+
+    @Override
+    public String toString() {
+        return "Empleado{" + "nombre=" + nombre + ", paterno=" + paterno + ", materno=" + materno + ", sueldoBase=" + sueldoBase + ", departamento=" + departamento + '}';
+    }
+    
+    
 
     public Empleado() {
     }
 
-    public Empleado(String nombre, String paterno, String materno, Integer sueldo, String departamento) {
+    public Empleado(String nombre, String paterno, String materno, Float sueldoBase, String departamento) {
         this.nombre = nombre;
         this.paterno = paterno;
         this.materno = materno;
-        this.sueldo = sueldo;
+        this.sueldoBase = sueldoBase;
         this.departamento = departamento;
     }
 
@@ -51,12 +50,12 @@ public class Empleado {
         this.materno = materno;
     }
 
-    public Integer getSueldo() {
-        return sueldo;
+    public Float getSueldoBase() {
+        return sueldoBase;
     }
 
-    public void setSueldo(Integer sueldo) {
-        this.sueldo = sueldo;
+    public void setSueldoBase(Float sueldoBase) {
+        this.sueldoBase = sueldoBase;
     }
 
     public String getDepartamento() {
@@ -66,5 +65,6 @@ public class Empleado {
     public void setDepartamento(String departamento) {
         this.departamento = departamento;
     }
+    
     
 }
