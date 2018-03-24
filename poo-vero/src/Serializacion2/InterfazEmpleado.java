@@ -194,9 +194,33 @@ public class InterfazEmpleado extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        Empleado e1=new Empleado("Vero","Carrasco","Machuca",4500F,"Sistemas");
-        //System.out.println(e1);
-        System.out.println(e1);//sin el toString() aparece la direccion de memoria
+        
+        String nombre=jTextField1.getText().toString();
+        String apaterno=jTextField2.getText().toString();
+        String amaterno=jTextField3.getText().toString();
+        float sueldo=(float) 0.0;
+        switch(jComboBox1.getSelectedIndex()){
+            case 0:
+                sueldo=(float) 2000.0;
+                break;
+            case 1:
+                sueldo=(float) 3000.0;
+                break;
+            case 2:
+                sueldo=(float) 4000.0;
+                break;
+            case 3:
+                sueldo=(float) 5000.0;
+                break;
+        }
+        //Float sueldo=new Float(jComboBox1.getSelectedItem().toString());
+        String dep=jComboBox2.getSelectedItem().toString();
+        Empleado e1=new Empleado(nombre,apaterno,amaterno,sueldo,dep);
+        PersistenciaEmpleado per=new PersistenciaEmpleado();
+        per.guardar(e1);
+
+//System.out.println(e1);
+        //System.out.println(e1);//sin el toString() aparece la direccion de memoria
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
