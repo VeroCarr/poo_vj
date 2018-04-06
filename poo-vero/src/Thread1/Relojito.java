@@ -20,25 +20,26 @@ public class Relojito extends javax.swing.JFrame {
      */
     public Relojito() {
         initComponents();
-            Thread t1=new Thread(new Runnable(){//oontiene una 
-            //implementacion del metodo run
-            //de la Thread pero es abstracta
-            public void run(){
-                  while(true){
-        LocalTime tiempo=LocalTime.now();
-        int hora = tiempo.getHour();
-        int min = tiempo.getMinute();
-        int sec = tiempo.getSecond();
-        jLabel1.setText("La hora es "+hora+":"+min+":"+sec);
-            try {
-                Thread.sleep(1000);
-            } catch (InterruptedException ex) {
-                Logger.getLogger(ProbarThreads.class.getName()).log(Level.SEVERE, null, ex);
+
+        Thread t1 = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                while (true) {
+                    try {
+                        LocalTime tiempo = LocalTime.now();
+                        int hora = tiempo.getHour();
+                        int min = tiempo.getMinute();
+                        int sec = tiempo.getSecond();
+                        jLabel1.setText("La hora es " + hora + ":" + min + ":" + sec);
+                        Thread.sleep(1000);
+                    } catch (InterruptedException ex) {
+
+                    }
+                }
             }
+
         }
-            } //Se cierra el metodod run
-        }//Se cierra la interna anonima
-        ); //Se cierra el constructor
+        );
         t1.start();
     }
 

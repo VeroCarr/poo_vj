@@ -20,24 +20,27 @@ public class VentanaX extends javax.swing.JFrame {
      */
     public VentanaX() {
         initComponents();
-        Thread t1=new Thread(new Runnable(){//oontiene una 
-            //implementacion del metodo run
-            //de la Thread pero es abstracta
-            public void run(){
-                 while(true){
-             setSize(400, 400);
-              
-            try {
-                Thread.sleep(1);
-           
-            } catch (InterruptedException ex) {
-                Logger.getLogger(ProbarThreads.class.getName()).log(Level.SEVERE, null, ex);
+        setSize(500,500);
+         Thread t1 = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                int decremento=0;
+                
+                while (true) {
+                    try {
+                       decremento=decremento+10;
+                       if(500-decremento<0)break;
+                       setSize(500-decremento,500-decremento);
+                       
+                       Thread.sleep(1000);
+                    } catch (InterruptedException ex) {
+
+                    }
+                }
             }
+
         }
-              
-            } //Se cierra el metodod run
-        }//Se cierra la interna anonima
-        ); //Se cierra el constructor
+        );
         t1.start();
     }
 
