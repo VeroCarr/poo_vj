@@ -9,40 +9,28 @@ import java.time.LocalTime;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-/**
- *
- * @author T-102
- */
 //Segunda forma de crear threads: Implementando la interface Runnable 
 public class ProbarThreads implements Runnable {
     public static void main(String[] args) {
         //1. Crea el thread
         TareaX t1=new TareaX();
-        TareaX t2=new TareaX();
+       TareaX t2=new TareaX();
         Runnable r= new ProbarThreads();
-        
         Thread t3=new Thread(r);
-        
-        Thread t4=new Thread(new Runnable() {
-            @Override
-            public void run() {
-
-            }
-        });
         //2.Inicializado
-        t1.setName("Cookies");
-        t2.setName("Luna");
-        t1.start();
-        t2.start();
+       t1.setName("Cookies");
+       t2.setName("Luna");
+       t1.start();
+       t2.start();
         t3.start();
         //3. En ejecucion lo da la JVM decide
         //4. Pausa no la vamos a poner aqui, es en caso de 
         //que haga algo que dure cierto tiempo
         //5. Su muerte es cuando termina su proceso
+  
     }
-
-    @Override
-    public void run() {
+//  @Override
+          public void run() {
         //Hacemos otra cosa
         while(true){
         LocalTime tiempo=LocalTime.now();
@@ -53,8 +41,9 @@ public class ProbarThreads implements Runnable {
             try {
                 Thread.sleep(1000);
             } catch (InterruptedException ex) {
-                Logger.getLogger(ProbarThreads.class.getName()).log(Level.SEVERE, null, ex);
+               // Logger.getLogger(ProbarThreads.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
     }
+
 }

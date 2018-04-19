@@ -29,7 +29,7 @@ public class VentanaX extends javax.swing.JFrame {
                 while (true) {
                     try {
                        decremento=decremento+10;
-                       if(500-decremento<0)break;
+                       //if(500-decremento<0)break;
                        setSize(500-decremento,500-decremento);
                        
                        Thread.sleep(1000);

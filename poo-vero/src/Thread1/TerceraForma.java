@@ -6,8 +6,8 @@
 package Thread1;
 
 import java.time.LocalTime;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+
+
 
 /**
  *
@@ -19,7 +19,19 @@ public class TerceraForma {
             //implementacion del metodo run
             //de la Thread pero es abstracta
             public void run(){
-                System.out.println("Un threaed bueno");
+               // System.out.println("Un threaed bueno");
+                while (true) {
+                    try {
+                        LocalTime tiempo = LocalTime.now();
+                        int hora = tiempo.getHour();
+                        int min = tiempo.getMinute();
+                        int sec = tiempo.getSecond();
+                        System.out.println("La hora es " + hora + ":" + min + ":" + sec);
+                        Thread.sleep(1000);
+                    } catch (InterruptedException ex) {
+
+                    }
+                }
             } //Se cierra el metodod run
         }//Se cierra la interna anonima
         ); //Se cierra el constructor

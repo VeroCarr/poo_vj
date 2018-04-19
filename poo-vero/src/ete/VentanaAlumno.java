@@ -227,8 +227,8 @@ public class VentanaAlumno extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        Examen examen=new Examen(Texamen.getText(),Float.parseFloat(Tcalif.getText()));
-        Alumno alumno=new Alumno(Long.parseLong(Tcuenta.getText()),TNombre.getText(),TApellido.getText(),Tmaterno.getText(),examen);
+        Examen exam=new Examen(Texamen.getText(),Float.parseFloat(Tcalif.getText()));
+        Alumno alumno=new Alumno(Long.parseLong(Tcuenta.getText()),TNombre.getText(),TApellido.getText(),Tmaterno.getText(),exam);
         PersistenciaAlumno p=new PersistenciaAlumno();
         p.guardar(alumno);
         JOptionPane.showMessageDialog(this,"Guardado con exito","confirmar", 1);

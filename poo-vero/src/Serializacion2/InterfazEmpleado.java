@@ -241,14 +241,9 @@ public class InterfazEmpleado extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void ActualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ActualizarActionPerformed
-        ArrayList<Empleado> emp=new ArrayList<>();
-        for(Empleado em:emp){
-            jTable1.addRow(em.getNombre(),em.getPaterno(),em.getMaterno(),em.getSueldoBase(),em.getDepartamento());
-
-        }
+    
         
-        
-        
+       
     }//GEN-LAST:event_ActualizarActionPerformed
 
     /**

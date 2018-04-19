@@ -4,6 +4,13 @@ package Serializacion;
 import java.io.*; //input output
 public class PersistenciaUsuario {
     Usuario u;
+    public Usuario getU() {
+        return u;
+    }
+
+    public void setU(Usuario u) {
+        this.u = u;
+    }  
     //generamos el metodo para serializar a nuestro usuario
     public void guardar(){
        //Para serializar el primer paso es generar el archivo donde 
@@ -22,13 +29,7 @@ public class PersistenciaUsuario {
            System.out.println(e.getMessage());
        }
     }  
-    public Usuario getU() {
-        return u;
-    }
-
-    public void setU(Usuario u) {
-        this.u = u;
-    }  
+ 
     public Usuario recobrarUsuario(){
         File file=new File("archivaldo.yo"); 
         Usuario recobrado=null;

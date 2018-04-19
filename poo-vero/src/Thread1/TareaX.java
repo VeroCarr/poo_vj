@@ -5,6 +5,8 @@
  */
 package Thread1;
 
+
+
 /**
  *
  * @author T-102
@@ -13,10 +15,11 @@ package Thread1;
  */
 public class TareaX extends Thread{
 
-    @Override
+ 
     public void run() {
         
         System.out.println("Soy un thread muy sencillo"
         +" y me llamo "+Thread.currentThread().getName());
     }
+      
 }
